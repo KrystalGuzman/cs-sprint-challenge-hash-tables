@@ -6,7 +6,19 @@ def finder(files, queries):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    result = []
+    cache = {}
+
+    # stores queries in cache
+    for x in queries:
+        cache[x] = x
+    
+    for f in files:
+        #file name is last part
+        words = f.split("/")
+        if words[-1] in cache:
+            #adds to result
+            result.append(f)
 
     return result
 
